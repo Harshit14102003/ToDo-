@@ -34,7 +34,7 @@ const register = () => {
     const router = useRouter();
   const submitHandler=async(e)=>{
     e.preventDefault();
-    setLoading(false)
+    setLoading(true)
     try {
       const {data}=await axios.post('https://nodejs-todo-w0m2.onrender.com/api/v1/users/new',{
       name,email,password 
@@ -46,11 +46,11 @@ const register = () => {
     })
     toast.success(data.message);
     setIsAuthenticated(true); 
-    setLoading(true)
+    setLoading(false)
     } catch (error) {
       toast.error("Please try again");
       setIsAuthenticated(false); 
-      setLoading(true)
+      setLoading(false)
       console.log(error); 
     }
     };
