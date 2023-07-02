@@ -11,9 +11,10 @@ import { AiOutlineHome } from 'react-icons/ai';
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { Context } from "@/pages/_app";
+import { useRouter } from "next/router";
 export default function Nav() {
   const {isAuthenticated,setIsAuthenticated,loading,setLoading}= useContext(Context);
-  
+  const router=useRouter();
   const logoutHandler=async()=>{
     setLoading(true);
     try {
