@@ -30,7 +30,11 @@ export default function Nav() {
       setLoading(false);
     }
     };
-
+    useEffect(() => {
+      if (!isAuthenticated) {
+        router.push('/login');
+      }
+    }, []);
   return (
     <Flex
       position={"fixed"}
