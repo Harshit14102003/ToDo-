@@ -90,7 +90,7 @@ axios.get("https://nodejs-todo-w0m2.onrender.com/api/v1/tasks/my",{
 }).then(res=>{
    setTasks (res.data.tasks);
 }).catch((e)=>{
- toast.error(e.response.data.message)
+ toast.error("login first")
 })
   },[refresh])
   useEffect(() => {

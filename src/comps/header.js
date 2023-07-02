@@ -24,13 +24,7 @@ export default function Nav() {
     toast.success("Logged out successfully");
     setIsAuthenticated(false); 
     setLoading(false);
-    useEffect(() => {
-      if (!isAuthenticated) {
-        router.push('/login');
-      }
-    }, []);
-
-
+    router.push('/login');
     } catch (error) {
       toast.error("some server error");
       console.log(error); 
